@@ -25,4 +25,7 @@ app.delete("/todos/:id", (req, res) => {
   res.status(204).end();
 });
 
-app.listen(3000, () => console.log("Todo app running at http://localhost:3000"));
+if (require.main === module) {
+    app.listen(3000, () => console.log("Todo app running..."));
+  }
+module.exports = app;
